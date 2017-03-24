@@ -46,7 +46,6 @@ public class SimpleClientCalculatorDemo {
 		} catch (TException e) {
 			e.printStackTrace();
 		} finally {
-			
 			transport.close();
 		}
 		

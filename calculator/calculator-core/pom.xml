@@ -2,8 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>demo.thrift</groupId>
-    <artifactId>thrift_demo</artifactId>
+    <artifactId>calculator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>demo-core</artifactId>
+  <artifactId>calculator-core</artifactId>
 </project>
