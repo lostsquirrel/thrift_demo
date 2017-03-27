@@ -24,7 +24,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>demo.thrift.server.JavaServer</mainClass>
+							<mainClass>demo.thrift.hello.server.Server</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>

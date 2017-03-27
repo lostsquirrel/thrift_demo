@@ -10,8 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import demo.thrift.hello.core.IHelloService;
-import demo.thrift.hello.service.HelloService;
-import demo.thrift.hello.service.impl.HelloServiceImpl;
+import demo.thrift.hello.server.service.HelloService;
+import demo.thrift.hello.server.service.impl.HelloServiceImpl;
 
 public class Server {
 	

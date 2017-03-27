@@ -1,8 +1,8 @@
-package demo.thrift.hello.service.impl;
+package demo.thrift.hello.server.service.impl;
 
 import org.apache.thrift.TException;
 
-import demo.thrift.hello.service.HelloService;
+import demo.thrift.hello.server.service.HelloService;
 
 public class HelloServiceImpl implements HelloService {
 
