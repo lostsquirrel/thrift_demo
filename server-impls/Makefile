@@ -5,7 +5,7 @@ REGISTRY=registry.cn-hangzhou.aliyuncs.com
 IMAGE=$(REGISTRY)/lisong/thrift-server-impls
 VERSIONED_IMAGE=$(IMAGE):$(VERSION_TAG)
 
-export VERSION_TAG
+export VERSION
 
 compile:
 	mvn clean package
