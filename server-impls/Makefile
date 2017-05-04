@@ -5,8 +5,6 @@ REGISTRY=registry.cn-hangzhou.aliyuncs.com
 IMAGE=$(REGISTRY)/lisong/thrift-server-impls
 VERSIONED_IMAGE=$(IMAGE):$(VERSION_TAG)
 
-export VERSION
-
 compile:
 	mvn clean package
 
@@ -14,7 +12,9 @@ test:
 	docker run -it --rm --entrypoint "/bin/bash" $(VERSIONED_IMAGE) -s
 	
 build:
-	docker build --no-cache -t $(VERSIONED_IMAGE) .
+	docker build --no-cache -t $(VERSIONED_IMAGE) \
+	--build-arg VERSION=$(VERSION) \
+	.
 	
 # 启动一个 TSimpleServer
 server-simple:
