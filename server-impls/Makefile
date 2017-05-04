@@ -7,6 +7,9 @@ VERSIONED_IMAGE=$(IMAGE):$(VERSION_TAG)
 compile:
 	mvn clean package
 
+test:
+	docker run -it --rm --entrypoint "/bin/bash" $(VERSIONED_IMAGE) -s
+	
 build:
 	docker build --no-cache -t $(VERSIONED_IMAGE) .
 	
