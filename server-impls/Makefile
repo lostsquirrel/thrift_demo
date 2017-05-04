@@ -5,7 +5,7 @@ IMAGE=$(REGISTRY)/lisong/thrift-server-impls
 VERSIONED_IMAGE=$(IMAGE):$(VERSION_TAG)
 
 build:
-	docker build --no-cache -t $(VERSIONED_IMAGE)
+	docker build --no-cache -t $(VERSIONED_IMAGE) .
 	
 # 启动一个 TSimpleServer
 server-simple:
