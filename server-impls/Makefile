@@ -17,12 +17,13 @@ client-test:
 server-build:
 	docker build --no-cache -t $(VERSIONED_IMAGE_SERVER) \
 	--build-arg VERSION=$(VERSION) \
-	server-impls-client
+	server-impls-server
+	
 
 client-build:
 	docker build --no-cache -t $(VERSIONED_IMAGE_CLIENT) \
 	--build-arg VERSION=$(VERSION) \
-	server-impls-server
+	server-impls-client
 	
 # 启动一个 TSimpleServer
 server-simple:
