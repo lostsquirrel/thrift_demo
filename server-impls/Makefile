@@ -1,8 +1,11 @@
 SHELL=/bin/bash
-VERSION_TAG=0.0.1
+VERSION=0.0.1
+VERSION_TAG=$(VERSION)
 REGISTRY=registry.cn-hangzhou.aliyuncs.com
 IMAGE=$(REGISTRY)/lisong/thrift-server-impls
 VERSIONED_IMAGE=$(IMAGE):$(VERSION_TAG)
+
+export VERSION_TAG
 
 compile:
 	mvn clean package
