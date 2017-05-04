@@ -4,6 +4,9 @@ REGISTRY=registry.cn-hangzhou.aliyuncs.com
 IMAGE=$(REGISTRY)/lisong/thrift-server-impls
 VERSIONED_IMAGE=$(IMAGE):$(VERSION_TAG)
 
+compile:
+	mvn clean package
+
 build:
 	docker build --no-cache -t $(VERSIONED_IMAGE) .
 	
