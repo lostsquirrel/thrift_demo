@@ -1,0 +1,6 @@
+10:12:54.407 [main] DEBUG demo.thrift.hello.client.Client - echo:       1:sdfds
+10:13:00.209 [main] DEBUG demo.thrift.hello.client.Client - echo:       2:dsfgdsg
+10:13:02.592 [main] DEBUG demo.thrift.hello.client.Client - echo:       3:fdsgfdg
+10:13:05.449 [main] DEBUG demo.thrift.hello.client.Client - echo:       4:dsafdsfas
+10:13:07.137 [main] DEBUG demo.thrift.hello.client.Client - echo:       5:sdfsdafsad
+10:13:08.737 [main] DEBUG demo.thrift.hello.client.Client - echo:       6:asdfdsa

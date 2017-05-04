@@ -34,7 +34,7 @@ public class Client {
 				msg = scan.next();
 				try {
 					String resp = helloService.echo(++serial, msg);
-					System.out.println(resp);
+					log.debug(resp);
 				} catch (TException e) {
 					log.error("{}", e);
 				}
