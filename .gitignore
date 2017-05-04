@@ -14,5 +14,5 @@ target/
 .project
 .classpath
 .settings/
-**/bin/
-**/logs/
+**/bin
+**/logs
