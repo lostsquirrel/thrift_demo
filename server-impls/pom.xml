@@ -41,8 +41,8 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>sever-impls-core</module>
+		<module>server-impls-core</module>
 		<module>server-impls-server</module>
-		<module>server-impl-client</module>
+		<module>server-impls-client</module>
 	</modules>
 </project>
