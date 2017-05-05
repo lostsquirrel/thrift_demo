@@ -7,7 +7,7 @@ VERSIONED_IMAGE_SERVER=$(IMAGE)-server:$(VERSION_TAG)
 VERSIONED_IMAGE_CLIENT=$(IMAGE):$(VERSION_TAG)
 
 code:
-	git pull
+	git reset --hard && git pull
 	
 compile: code
 	mvn clean package
@@ -56,4 +56,4 @@ client-simple-103000:
 	docker run --rm  -v `pwd`/logs:/app/logs $(VERSIONED_IMAGE_CLIENT) \
 	java -cp /app/server-impls-client-$(VERSION)-jar-with-dependencies.jar \
 	demo.thrift.server.impls.client.test.simple.TestSimpleServer \
-	 192.168.1.139 9090 10 300
+	 192.168.1.139 9090 10 3000
