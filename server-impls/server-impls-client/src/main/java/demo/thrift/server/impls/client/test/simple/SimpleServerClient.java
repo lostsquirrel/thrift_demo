@@ -24,10 +24,10 @@ public class SimpleServerClient implements Runnable {
 	
 	private SleepyService sleepyService;
 	
-	public SimpleServerClient(int clientNo, int timeout) {
+	public SimpleServerClient(int clientNo, int timeout, String host, int port) {
 		this.clientNo = clientNo;
 		this.timeout = timeout;
-		transport = new TSocket("localhost", 9090);
+		transport = new TSocket(host, port);
 		try {
 			transport.open();
 		} catch (TTransportException e) {
