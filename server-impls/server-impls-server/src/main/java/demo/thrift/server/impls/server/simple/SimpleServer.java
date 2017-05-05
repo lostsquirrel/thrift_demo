@@ -16,11 +16,11 @@ import demo.thrift.server.impls.server.service.impl.SleepyServiceImpl;
 public class SimpleServer {
 
 	private static final Logger log = LoggerFactory.getLogger(SimpleServer.class);
-	
+
 	public static void main(String[] args) {
 		SleepyService service = new SleepyServiceImpl();
 		ISleepyService.Processor<SleepyService> processor = new ISleepyService.Processor<SleepyService>(service);
-		
+
 		Runnable simple = new Runnable() {
 			public void run() {
 				TServerTransport serverTransport;
