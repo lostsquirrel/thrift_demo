@@ -1,4 +1,3 @@
-# 用于生成java代码，其它语言暂不作考虑
 
 namespace java demo.thrift.server.impls.core
 

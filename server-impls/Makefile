@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-VERSION=0.0.1
+VERSION=$(git describe --abbrev=0 --tags)
 VERSION_TAG=$(VERSION)
 REGISTRY=registry.cn-hangzhou.aliyuncs.com
 IMAGE=$(REGISTRY)/lisong/thrift-server-impls
@@ -56,4 +56,4 @@ client-simple-103000:
 	docker run --rm  -v `pwd`/logs:/app/logs $(VERSIONED_IMAGE_CLIENT) \
 	java -cp /app/server-impls-client-$(VERSION)-jar-with-dependencies.jar \
 	demo.thrift.server.impls.client.test.simple.TestSimpleServer \
-	 192.168.1.139 9090 10 3000
+	 192.168.1.139 9090 10 3000l
