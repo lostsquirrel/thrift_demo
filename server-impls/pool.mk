@@ -23,4 +23,4 @@ client-pool-103000:
 	docker run --rm  -v `pwd`/logs:/app/logs $(VERSIONED_IMAGE_CLIENT) \
 	java -cp /app/server-impls-client-$(VERSION)-jar-with-dependencies.jar \
 	demo.thrift.server.impls.client.test.simple.TestSimpleServer \
-	 192.168.1.139 9090 10 3000l
+	 192.168.1.139 9090 10 3000
