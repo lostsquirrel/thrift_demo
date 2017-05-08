@@ -25,9 +25,16 @@ client-pool-103000:
 	demo.thrift.server.impls.client.test.simple.TestSimpleServer \
 	 192.168.1.139 9090 10 3000 pool
 	 
-# 很大连接数测试， 启动客户端 500 个线程， 每个 100ms
+# 很大连接数测试， 启动客户端 1000 个线程， 每个 100ms
 client-pool-1000100:
 	docker run --rm  -v `pwd`/logs:/app/logs $(VERSIONED_IMAGE_CLIENT) \
 	java -cp /app/server-impls-client-$(VERSION)-jar-with-dependencies.jar \
 	demo.thrift.server.impls.client.test.simple.TestSimpleServer \
 	 192.168.1.139 9090 1000 100 pool
+	 
+# 超大连接数测试， 启动客户端 5000 个线程， 每个 100ms
+client-pool-5000100:
+	docker run --rm  -v `pwd`/logs:/app/logs $(VERSIONED_IMAGE_CLIENT) \
+	java -cp /app/server-impls-client-$(VERSION)-jar-with-dependencies.jar \
+	demo.thrift.server.impls.client.test.simple.TestSimpleServer \
+	 192.168.1.139 9090 5000 100 pool
