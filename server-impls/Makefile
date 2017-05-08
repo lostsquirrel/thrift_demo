@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-VERSION=$(git describe --abbrev=0 --tags)
+VERSION=$(SHELL echo git describe --abbrev=0 --tags)
 VERSION_TAG=$(VERSION)
 REGISTRY=registry.cn-hangzhou.aliyuncs.com
 IMAGE=$(REGISTRY)/lisong/thrift-server-impls
