@@ -31,4 +31,4 @@ client-build:
 build: compile server-build client-build
 	# nothing to do
 	
-include simple.mk,pool.mk
+include simple.mk pool.mk
