@@ -11,6 +11,7 @@ public class TestSimpleServer {
 		int port = args.length > 1 ? Integer.parseInt(args[1]) : 9090;
 		int amount = args.length > 2 ? Integer.parseInt(args[2]) : 10;
 		int timeout = args.length > 3 ? Integer.parseInt(args[3]) : 100;
+		String stype = args.length > 4 ? args[4] : "simple";
 		
 
 		ExecutorService fixedThreadPool = Executors.newFixedThreadPool(amount);
@@ -20,7 +21,13 @@ public class TestSimpleServer {
 		}
 		
 		try {
-			TimeUnit.MILLISECONDS.sleep(timeout * amount + 3 * 1000);
+			int timeout2 = 0;
+			if ("simple".equals(stype)) {
+				timeout2 = timeout * amount + 3 * 1000;
+			} else if ("pool".equals(stype)) {
+				timeout2 = timeout + 3 * 1000;
+			}
+			TimeUnit.MILLISECONDS.sleep(timeout2);
 			fixedThreadPool.shutdown();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
