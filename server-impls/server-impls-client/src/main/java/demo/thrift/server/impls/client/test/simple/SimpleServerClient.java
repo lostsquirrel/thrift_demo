@@ -44,7 +44,7 @@ public class SimpleServerClient implements Runnable {
 			long s = System.currentTimeMillis();
 			sleepyService.sleep(clientNo, timeout);
 			long e = System.currentTimeMillis() - s;
-			log.debug("client[{}] took {}ms for timeout:{}ms", this.clientNo, e ,timeout);
+			log.debug(String.format("client[%3d] took: %4d ms for timeout:%4d ms", this.clientNo, e ,timeout));
 		} catch (TException e) {
 			e.printStackTrace();
 		}

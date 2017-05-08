@@ -11,31 +11,40 @@ import org.slf4j.LoggerFactory;
 
 import demo.thrift.server.impls.core.ISleepyService;
 import demo.thrift.server.impls.server.service.SleepyService;
-import demo.thrift.server.impls.server.service.impl.SleepyServiceImpl;
 
-public class SimpleServer {
+public class SimpleServer implements Runnable {
 
 	private static final Logger log = LoggerFactory.getLogger(SimpleServer.class);
 
-	public static void main(String[] args) {
-		SleepyService service = new SleepyServiceImpl();
-		ISleepyService.Processor<SleepyService> processor = new ISleepyService.Processor<SleepyService>(service);
+	private ISleepyService.Processor<SleepyService> processor;
 
-		Runnable simple = new Runnable() {
-			public void run() {
-				TServerTransport serverTransport;
-				try {
-					serverTransport = new TServerSocket(9090);
-					TServer server = new TSimpleServer(new Args(serverTransport).processor(processor));
-					log.info("Starting the simple server...");
-					server.serve();
-				} catch (TTransportException e) {
-					log.error("starting the simple server failed, {}", e);
-					e.printStackTrace();
-				}
-			}
-		};
+	private TServerTransport serverTransport;
 
-		new Thread(simple).start();
+	public SimpleServer(ISleepyService.Processor<SleepyService> processor) {
+		this.processor = processor;
 	}
+
+	public void run() {
+		String name = this.getClass().getSimpleName();
+		try {
+			serverTransport = new TServerSocket(9090);
+		} catch (TTransportException e) {
+			log.error("starting the {} failed, {}", name, e);
+			e.printStackTrace();
+		}
+		TServer server = new TSimpleServer(new Args(serverTransport).processor(processor));
+		log.info("Starting the {}...", name);
+		server.serve();
+
+	}
+
+	public void stop() {
+		serverTransport.close();
+	}
+	
+	public void start() {
+		SimpleServer target = new SimpleServer(processor);
+		new Thread(target).start();
+	}
+
 }
